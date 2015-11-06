@@ -16,13 +16,17 @@ public class _08Hora12
 		System.out.print("Introduce los minutos: ");
 		minutos = tec.nextByte();
 		
-		if (hora >= 13)
+		if (hora > 11)
 		{
-			hora -= 12;
+			if (hora != 12)
+			{
+				hora -= 12;
+			}
 			horaConvertida = "PM";
 		}
 		else
 		{
+			if (hora == 0) hora = 12;
 			horaConvertida = "AM";
 		}
 		horaConvertida = String.format("%02d", hora) + ":" + String.format("%02d", minutos) + horaConvertida;

@@ -20,16 +20,14 @@ public class _13Salario
 		horas = tec.nextByte();
 		if (horas >= 40)
 		{
-			System.out.println(horas);
 			horas -= 40;
-			System.out.println(horas);
 			salario += 40 * ordinarias;
 			if (horas > 0) salario += horas * extra;
 		}
 		else salario = horas * ordinarias;
 		
 		if (salario <= limiteImpuestos) salario *= 1.0 - (impuestoBajo / 100.0);
-		else salario *= 1.0 - (impuestoAlto / 100);
+		else salario *= 1.0 - (impuestoAlto / 100.0);
 		System.out.println(salario);
 	}
 
