@@ -12,15 +12,24 @@ public class _03PotenciasDe2 {
 		System.out.print("Introduce un numero entero: ");
 		n = tec.nextInt();
 		
-		for (int i = 0; i <= n; i++)
+//		for (int i = 0; i <= n; i++)
+//		{
+//			int pow = 1;
+//			for (int j = 1; j <= i; j++)
+//			{
+//				pow *= 2;
+//			}
+//			System.out.format("2**%d = %d\n", i, pow);
+//		}
+		int i = 0;
+		int pow = 1;
+		System.out.format("2**%d = %d\n", i, pow);
+		i++;
+		while (i <= n)
 		{
-			int pow = 0;
-			pow = 1;
-			for (int j = 1; j <= i; j++)
-			{
-				pow *= 2;
-			}
+			pow *= 2;
 			System.out.format("2**%d = %d\n", i, pow);
+			i++;
 		}
 	}
 
