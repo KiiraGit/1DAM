@@ -10,9 +10,9 @@ public class _12Notas
 		int totalNotas = 0, aprobados = 0;
 		double media = 0;
 		
-		int nota = 0;
+		int nota;
 		
-		while (nota >= 0)
+		do
 		{
 			nota = tec.nextInt();
 			if (nota >= 0)
@@ -24,7 +24,8 @@ public class _12Notas
 				}
 				media += nota;
 			}
-		}
+		}while (nota >= 0);
+		
 		media /= totalNotas;
 		System.out.println("Total de notas introducidas: " + totalNotas);
 		System.out.println("Total de aprobados introducidos: " + aprobados);
