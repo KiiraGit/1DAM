@@ -13,7 +13,7 @@ public class _08SumaSerie
 		System.out.print("Introduce un numero entero: ");
 		n = tec.nextInt();
 		
-		for (int i = 1; i < n; i++)
+		for (int i = 1; i <= n; i++)
 		{
 			suma += 1.0/i;
 		}

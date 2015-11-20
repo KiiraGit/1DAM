@@ -13,9 +13,9 @@ public class _05Primos
 		System.out.print("Introduce un numero entero: ");
 		num = tec.nextInt();
 		
-		while (esPrimo && counter < num/2)
+		while (esPrimo && counter < num / 2)
 		{
-			if (num % 2 == 0) esPrimo = false;
+			if (num % counter == 0) esPrimo = false;
 			counter++;
 		}
 		

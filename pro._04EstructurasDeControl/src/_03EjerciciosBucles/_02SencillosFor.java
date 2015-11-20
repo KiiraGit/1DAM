@@ -16,7 +16,7 @@ public class _02SencillosFor
 //		cuentaAtras(N);
 //		sumaNPrimeros(N);
 //		mostrarDivisoresN(N);
-		sumaDivisoresN(n);
+//		sumaDivisoresN(n);
 	}
 
 	public static void imparesHastaN(int n)
