@@ -45,7 +45,7 @@ public class Coordenadas
 		float decimal = 0;
 		
 		int gPos, mPos, sPos;
-		gPos = coordenada.indexOf('ยบ');
+		gPos = coordenada.indexOf('บ');
 		mPos = coordenada.indexOf('\'');
 		sPos = coordenada.indexOf('"');
 		
