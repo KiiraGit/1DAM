@@ -16,7 +16,7 @@ public class _05AdivinarNumero
 			intento = tec.nextInt();
 			if (intento > secretNum) System.out.println("Te has pasado");
 			else if (intento < secretNum) System.out.println("Te has quedado corto");
-			else System.out.println("¡ACERTASTE!");
+			else System.out.println("Â¡ACERTASTE!");
 			cont++;
 		}while (intento != secretNum && cont <= 10);
 		

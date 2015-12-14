@@ -19,10 +19,8 @@ public class _05LetraNif
 		{
 			letra[0] = dni.charAt(dni.length() - 1);
 			dni = dni.substring(0, dni.length() - 1);
-			//System.out.println(Integer.valueOf(dni.substring(0, dni.length())));
-			//System.out.println(resto);
 		}
-		resto = Integer.valueOf(dni.substring(0, dni.length())) % 23;
+		resto = Integer.valueOf(dni) % 23;
 		
 		letra[1] = tablaNif.charAt(resto);
 		

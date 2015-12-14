@@ -31,6 +31,15 @@ public class _03PotenciasDe2 {
 			System.out.format("2**%d = %d\n", i, pow);
 			i++;
 		}
+		
+		/*
+		 * pow = 1;
+		 for (int j = 0; j <= n; j++)
+		 {
+			System.out.format("2**%d = %d\n", i, pow);
+			pow *= 2;
+		 }
+		 */
 	}
 
 }

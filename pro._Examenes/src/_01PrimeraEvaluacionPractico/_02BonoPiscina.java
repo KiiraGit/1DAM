@@ -26,6 +26,7 @@ public class _02BonoPiscina
 		//	Entrada de datos
 		System.out.print("Socio (si / no): ");
 		socio = tec.next();
+		boolean esSocio = socio.equalsIgnoreCase("si");
 		
 		System.out.print("Familia numerosa (si / no): ");
 		famNum = tec.next();
@@ -35,30 +36,30 @@ public class _02BonoPiscina
 		
 		if (edad >= 5 && edad <= 80)
 		{
-			if (edad >= 5 && edad <=12)
+			if (edad <=12)
 			{
 				precio = bonoNinos;
-				if (socio.equalsIgnoreCase("si")) precio -= descNinos;
+				if (esSocio) precio -= descNinos;
 			}
-			else if (edad >= 13 && edad <= 17)
+			else if (edad <= 17)
 			{
 				precio = bonoJovenes;
-				if (socio.equalsIgnoreCase("si")) precio -= descJovenes;
+				if (esSocio) precio -= descJovenes;
 			}
-			else if (edad >= 18 && edad <= 64)
+			else if (edad <= 64)
 			{
 				precio = bonoAdultos;
-				if (socio.equalsIgnoreCase("si")) precio -= descAdultos;
+				if (esSocio) precio -= descAdultos;
 			}
 			else
 			{
 				precio = bonoJubilados;
-				if (socio.equalsIgnoreCase("si")) precio -= descJubilados;
+				if (esSocio) precio -= descJubilados;
 			}
 			
 			if (famNum.equalsIgnoreCase("si")) precio -= descFamNum;
 			
-			System.out.println("El precio del bono es de " + precio + "€");
+			System.out.println("El precio del bono es de " + precio + "â‚¬");
 		}
 		else
 		{

@@ -7,7 +7,7 @@ public class _09CifrasNumero
 	public static void main(String[] args) 
 	{
 		Scanner tec = new Scanner(System.in);
-		int num, cifras = 0;
+		int num, cifras = 1;
 		
 		System.out.print("Introduce un numero: ");
 		num = tec.nextInt();
@@ -17,7 +17,6 @@ public class _09CifrasNumero
 			num /= 10;
 			cifras++;
 		}
-		cifras++;
 		
 		System.out.println("El numero introducido tiene " + cifras + " cifras");
 	}
