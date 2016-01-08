@@ -23,6 +23,7 @@ public class Fechas
 	{
 		System.out.println("1 - Validar fecha.");
 		System.out.println("2 - Calcular diferencia.");
+		System.out.println("3 - Sumar dias");
 		System.out.println("0 - Salir.");
 		System.out.println("--------------");
 		System.out.print("Indique la accion a realizar: ");
@@ -45,6 +46,10 @@ public class Fechas
 				case 2:
 					System.out.println("Calcular");
 					diferenciaFechas();
+					break;
+				case 3:
+					System.out.println("Sumar dias");
+					sumarDias();
 					break;
 				case 0:
 					System.out.println("Salir");
@@ -166,7 +171,7 @@ public class Fechas
 				byte mes = Byte.parseByte(dma[1]);
 				byte dia = Byte.parseByte(dma[0]);
 
-				if (anyo > 0 && mes >= 1 && mes <= 12 && (mes == 2 && esBisiesto(anyo) && dia > 0 && dia <= 29) || dia > 0 && dia <= diasMeses[mes - 1])
+				if (anyo > 0 && mes >= 1 && mes <= 12 && (mes == 2 && esBisiesto(anyo) && dia > 0 && dia <= 29) || (dia > 0 && dia <= diasMeses[mes - 1]))
 				{
 					return true;
 				}
@@ -178,9 +183,9 @@ public class Fechas
 			else throw new ArrayIndexOutOfBoundsException();
 	}
 	
-	public static boolean esBisiesto(int ano) 
+	public static boolean esBisiesto(int anyo) 
 	{
-		return (ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0));
+		return (anyo % 400 == 0 || (anyo % 4 == 0 && anyo % 100 != 0));
 	}
 	
 	public static int calcularBisiestos(int anyo1, int anyo2)
@@ -196,4 +201,53 @@ public class Fechas
 		return cantidad;
 	}
 
+	public static void sumarDias()
+	{
+		boolean f1 = false;
+		String fecha1;
+		
+		do
+		{
+			System.out.print("Introduce una fecha: ");
+			fecha1 = tec.nextLine();
+			try
+			{
+				f1 = validacion(fecha1);
+				if (!f1)
+				{
+					System.out.println("Fecha invalida");
+				}
+			} catch (ArrayIndexOutOfBoundsException ex)
+			{
+				System.out.println("Formato invalido");
+			}
+		} while (!f1);
+		
+		System.out.print("Introduce el numero de dias a sumar: ");
+		int dias = tec.nextInt();
+		tec.nextLine();
+
+		String[] dma = fecha1.split("/");
+		
+		int anyo = Integer.parseInt(dma[2]);
+		byte mes = Byte.parseByte(dma[1]);
+		byte dia = Byte.parseByte(dma[0]);
+		
+		dia += dias;
+		
+		while (dia > diasMeses[mes - 1])
+		{
+			dia -= diasMeses[mes - 1];
+			if (mes != 12)
+			{
+				mes++;
+			}
+			else
+			{
+				mes = 1;
+				anyo++;
+			}
+		}
+		System.out.println(fecha1 + " + " + dias + " dias -> " + dia + "/" + mes + "/" + anyo);
+	}
 }
